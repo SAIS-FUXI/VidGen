@@ -1,0 +1,63 @@
+model:
+    type: PixArtVideo_XL_1x2x2
+    space_scale: 0.5
+    time_scale: 1.0
+    mlp_type: "llama"
+    #enable_rope: True
+    position_embed_spaltial: "absolute"
+    position_embed_temporal: "rope"
+
+    norm_type: "llamarmsnorm"
+    in_channels: 8                    # to be consistent with videovae
+    temp_window_size: [-1, 4, 4]      # windown attn for temporal-attn
+    adain_with_text: True
+    qk_norm: False
+    
+    prob_text_condition: 1.0
+    prob_img_condition: 0
+    prob_img_condition_attn: 0
+
+    class_dropout_prob: 0.1
+
+    grad_checkpointing: True
+
+    enable_frames_embedder: False 
+    enable_tgt_size_embedder: False
+
+clip_image_encoder: "pretrain_models/openai/clip-vit-large-patch14"
+ 
+vae:
+    type: "CausualVAEVideo"
+    # z=8
+    config: "configs/vae_config.yaml"
+    from_pretrained: "./pretrain_model/vidgen/vae/vae_pytorch_model.bin"
+
+
+text_encoder:
+    type: "t5"
+    from_pretrained: "pretrain_models/"
+    model_max_length: 200
+    shardformer: True
+
+
+diffusion:
+    type: "IDDPM"
+    snr: False
+    train_sampling_steps: 1000
+    prob_self_condition: 0
+    v_predict: False
+
+
+num_frames_video: 17            # base frames of one video slice 
+num_slice_for_long_video: -1    # how many 2s slice is the long video be split, -1 denotes dynamic
+
+resolution_video: -1
+resolution_image: -1
+mode_various_resolution: False
+
+precision: "bf16"
+seed: 42
+workers: 4
+grad_checkpoint: False
+gradient_accumulation_steps: 4
+logging_steps: 10

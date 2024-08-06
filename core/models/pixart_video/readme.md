@@ -1,0 +1,1 @@
+基于 pixart-alpha, 扩展到 video diffusion

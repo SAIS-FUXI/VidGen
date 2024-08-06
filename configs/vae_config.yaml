@@ -1,0 +1,51 @@
+embed_dim: 8
+lossconfig:
+  type: LPIPS
+  params:
+    kl_weight: 1.0e-06
+    perceptual_weight: 1.0
+ddconfig:
+  double_z: true
+  z_channels: 8
+  t_frames: 17
+  in_channels: 3
+  out_ch: 3
+  ch: 128
+  ch_mult:
+  - 1
+  - 2
+  - 4
+  - 4
+  spatial_stride:
+  - 2
+  - 2
+  - 2
+  - 1
+  temporal_stride:
+  - 2
+  - 2
+  - 1
+  - 1
+  num_res_blocks: 4
+  attn_resolutions: []
+  dropout: 0.0
+  attn_type: causual_spatial_temporal
+  revise_norm_bug: True
+
+fps_ds: 8
+resolution_video: 256
+resolution_image: 256
+model_name: CausualVAEVideo
+precision: bf16
+keep_aspect_ratio: 'False'
+
+
+#scaling_factor_size_128_video: 0.21585
+#scaling_factor_size_256_video: 0.22970
+#scaling_factor_size_512_video: 0.21397
+scaling_factor_video: 0.22970
+
+#scaling_factor_size_128_image: 0.21585
+#scaling_factor_size_256_image: 0.26691
+#scaling_factor_size_512_image: 0.270743
+scaling_factor_image: 0.26691
