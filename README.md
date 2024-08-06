@@ -1,6 +1,6 @@
 # VIDGEN-1M
 
-## VIDGEN-1M: A LARGE-SCALE DATASET FOR TEXTTO-VIDEO GENERATION
+## VIDGEN-1M: A LARGE-SCALE DATASET FOR TEXT-TO-VIDEO GENERATION
 
 [![arXiv](https://img.shields.io/badge/arXiv-2408.02629-b31b1b.svg)](https://arxiv.org/abs/2408.02629)
 [![Project Page](https://img.shields.io/badge/Project-Website-blue)](https://sais-fuxi.github.io/projects/vidgen-1m/)
