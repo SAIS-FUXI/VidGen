@@ -18,8 +18,8 @@ we present VidGen-1M, a superior training dataset for text-to-video models. Prod
 1. Clone this repository
 2. Install Package
 ```Shell
-conda create -n videodiff python=3.10
-conda activate videodiff
+conda create -n vidgen python=3.10
+conda activate vidgen
 
 pip install torch==2.2.2 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
