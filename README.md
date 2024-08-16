@@ -7,7 +7,6 @@
 
 ## Introduction
 we present VidGen-1M, a superior training dataset for text-to-video models. Produced through a coarse-to-fine curation strategy, this dataset guarantees high-quality videos and detailed captions with excellent temporal consistency. We trained a video generation model using this data and open-source the model.
-![image](https://github.com/user-attachments/assets/398a8634-34c0-43f7-9ecb-b5ac8c1be88d)
 
 ## News
 - (🔥 New) **August 16, 2024** VidGen-1M dataset has been released and can be downloaded [here](https://huggingface.co/datasets/Fudan-FUXI/VIDGEN-1M).Please note that due to the large size of the dataset, uploading takes time, so the data you download may be less than 1M, but you can continue to pay attention and get all the data. Thank you for your attention.
